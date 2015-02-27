@@ -1,0 +1,30 @@
+{
+  "name": "sixsixsix",
+  "version": "1.0.0",
+  "description": "es6 boilerplate for quick prototyping",
+  "main": "src/sixsixsix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it0a/sixsixsix"
+  },
+  "author": "it0a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/it0a/sixsixsix/issues"
+  },
+  "homepage": "https://github.com/it0a/sixsixsix",
+  "dependencies": {
+    "babel": "^4.5.5",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
+    "gulp-cache": "^0.2.8",
+    "gulp-cached": "^1.0.2",
+    "gulp-concat": "^2.5.2",
+    "gulp-remember": "^0.3.0",
+    "gulp-uglify": "^1.1.0"
+  }
+}
