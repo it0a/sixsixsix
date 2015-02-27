@@ -15,6 +15,9 @@ function handleError(err) {
 var dist = 'dist';
 
 var paths = {
+  stylesheets: [
+    'src/**/*.css',
+  ],
   scripts: [
     'src/**/*.js',
   ],
@@ -30,7 +33,18 @@ gulp.task('clean', function (cb) {
 gulp.task('watch', function () {
   gulp.watch(paths.scripts, ['scripts'])
   .on('error', handleError);
-  gulp.watch(paths.scripts, ['markup'])
+  gulp.watch(paths.stylesheets, ['stylesheets'])
+  .on('error', handleError);
+  gulp.watch(paths.markup, ['markup'])
+  .on('error', handleError);
+});
+
+gulp.task('stylesheets', ['clean'], function () {
+  return gulp.src(paths.stylesheets)
+  .on('error', handleError)
+  .pipe(concat('app.css'))
+  .on('error', handleError)
+  .pipe(gulp.dest(dist))
   .on('error', handleError);
 });
 
@@ -57,4 +71,4 @@ gulp.task('scripts', ['clean'], function () {
   .on('error', handleError);
 });
 
-gulp.task('default', ['watch', 'scripts', 'markup']);
+gulp.task('default', ['watch', 'scripts', 'markup', 'stylesheets']);
